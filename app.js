@@ -1,4 +1,4 @@
-require('dotenv').config(); // ← Sabse pehle
+require('dotenv').config(); 
 
 const express = require('express');
 const cors = require('cors');
@@ -18,7 +18,7 @@ connectDB();
 
 app.use(helmet());
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'https://omnifood74.netlify.app/'],
+  origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'https://omnifood74.netlify.app'],
   credentials: true
 }));
 app.use(express.json());
