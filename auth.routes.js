@@ -16,11 +16,11 @@ router.get('/google',
 );
 
 router.get('/google/callback',
-  passport.authenticate('google', { failureRedirect: 'https://omnifood74.netlify.app/' }),
+  passport.authenticate('google', { failureRedirect: process.env.CLIENT_URL }),
   (req, res) => {
     const token = generateToken(req.user._id);
     const photo = req.user.photo || '';
-    res.redirect(`http://localhost:5173?token=${token}&name=${encodeURIComponent(req.user.fullName)}&photo=${encodeURIComponent(photo)}`);
+    res.redirect(`${process.env.CLIENT_URL}?token=${token}&name=${encodeURIComponent(req.user.fullName)}&photo=${encodeURIComponent(photo)}`);
   }
 );
 
