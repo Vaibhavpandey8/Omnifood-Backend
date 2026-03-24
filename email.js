@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const sendVerificationEmail = async (email, fullName, token) => {
-  const verifyURL = `http://localhost:5000/api/auth/verify-email?token=${token}`;
+  const verifyURL = `${process.env.BACKEND_URL}/api/auth/verify-email?token=${token}`;
 
   await transporter.sendMail({
     from: `"Omnifood" <${process.env.EMAIL_USER}>`,
