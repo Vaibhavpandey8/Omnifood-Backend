@@ -60,7 +60,7 @@ const verifyEmail = async (req, res, next) => {
     user.verificationToken = null;
     await user.save();
 
-    res.redirect('http://localhost:5173?verified=true');
+    res.redirect('https://omnifood74.netlify.app/?verified=true');
 
   } catch (error) {
     next(error);
