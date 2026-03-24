@@ -16,7 +16,7 @@ router.get('/google',
 );
 
 router.get('/google/callback',
-  passport.authenticate('google', { failureRedirect: 'http://localhost:5173' }),
+  passport.authenticate('google', { failureRedirect: 'https://omnifood74.netlify.app/' }),
   (req, res) => {
     const token = generateToken(req.user._id);
     const photo = req.user.photo || '';
